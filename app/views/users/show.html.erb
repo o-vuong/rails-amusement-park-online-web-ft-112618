@@ -1,0 +1,8 @@
+<% if @user.admin %>
+  <%= render partial: 'admin', locals: { user: @user } %>
+<% else %>
+  <%= render partial: 'user', locals: { user: @user, message: @message } %>
+<% end %>
+
+<%= link_to "See attractions", attractions_path %>
+<%= link_to "Log Out", signout_path, method: "delete" %>
